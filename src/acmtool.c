@@ -97,7 +97,7 @@ static void play_file(const char *fn)
 {
 	ACMStream *acm;
 	int err, res, buflen;
-	ao_sample_format fmt;
+	ao_sample_format fmt = { 0 };
 	ao_device *dev;
 	char *buf;
 	unsigned int total_bytes, bytes_done = 0;

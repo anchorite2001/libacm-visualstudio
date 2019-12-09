@@ -33,7 +33,7 @@ if test x"$GCC" = xyes; then
   flags="$flags -Wstrict-prototypes -Wundef -Wformat -Wnonnull -Wstrict-overflow"
   for f in $flags; do
     CFLAGS="$good_CFLAGS $warnings $f"
-    AC_COMPILE_IFELSE([void foo(void){}], [warnings="$warnings $f"])
+    AC_COMPILE_IFELSE([AC_LANG_SOURCE([void foo(void){}])], [warnings="$warnings $f"])
   done
   CFLAGS="$good_CFLAGS $warnings"
   AC_MSG_RESULT([$warnings])
